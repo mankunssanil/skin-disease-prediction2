@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe0bd; /* Skin tone color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        label:hover {
+            background-color: #45a049;
+        }
+        #image-preview {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 30px;
+        }
+        img {
+            max-width: 40%;
+            height: auto;
+        }
+        .predict-button {
+            background-color: #ff4d4d; /* Red color for the predict button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0; /* Center align */
+            width: 150px; /* Match the width with the "Choose an image" button */
+        }
+        .predict-button:hover {
+            background-color: #ff3333; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Skin Disease Prediction</h1>
+        <form id="upload-form">
+            <label for="file">Choose an image</label>
+            <input type="file" id="file" accept="image/*" onchange="previewImage(event)">
+        </form>
+        <div id="image-preview"></div>
+        <button class="predict-button" onclick="predict()">Predict</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var preview = document.getElementById('image-preview');
+                var image = document.createElement('img');
+                image.src = reader.result;
+                preview.innerHTML = '';
+                preview.appendChild(image);
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function predict() {
+            var form = document.getElementById('upload-form');
+            var formData = new FormData(form);
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<h2>Prediction Result</h2>';
+                resultDiv.innerHTML += '<p><strong>Image:</strong> ' + data.filename + '</p>';
+                resultDiv.innerHTML += '<p><strong>Predicted Disease:</strong> ' + data.predicted + '</p>';
+                resultDiv.innerHTML += '<p><strong>Confidence:</strong> ' + data.confidence + '</p>';
+                resultDiv.innerHTML += '<p><strong>Symptoms:</strong></p>';
+                resultDiv.innerHTML += '<ul>';
+                data.symptoms.forEach(symptom => {
+                    resultDiv.innerHTML += '<li>' + symptom + '</li>';
+                });
+                resultDiv.innerHTML += '</ul>';
+                resultDiv.innerHTML += '<p><strong>Precautions:</strong></p>';
+                resultDiv.innerHTML += '<ul>';
+                data.precautions.forEach(precaution => {
+                    resultDiv.innerHTML += '<li>' + precaution + '</li>';
+                });
+                resultDiv.innerHTML += '</ul>';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
