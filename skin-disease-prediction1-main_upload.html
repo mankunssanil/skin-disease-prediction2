@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image for Skin Disease Prediction</title>
+    <style>
+        body {
+            background-image: url('https://www.shutterstock.com/shutterstock/photos/2245911839/display_1500/stock-photo-floating-spheres-d-rendering-empty-space-for-product-show-2245911839.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh; /* Ensure the background covers the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image for Skin Disease Prediction</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" accept="image/*">
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+    <div id="predictionResult"></div>
+
+    <script>
+        function predict() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var formData = new FormData();
+            formData.append('file', file);
+
+            // Send the image file to the server for prediction using AJAX or fetch API
+            // Handle the prediction response and display the result on the page
+        }
+    </script>
+</body>
+</html>
