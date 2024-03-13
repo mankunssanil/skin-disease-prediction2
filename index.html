@@ -52,23 +52,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         // Function to change background images
         var index = 0;
         var images = [
-            
             'https://s3.ap-southeast-2.amazonaws.com/cdn.basscoastskindoctors.com.au/wp-content/uploads/2021/12/16111303/Skin-specialist-vs-skin-doctor-whats-the-difference-HERO.jpg',
             'https://www.lshtm.ac.uk/sites/default/files/2019-05/skindisease-picture.jpg',
             'https://example.com/second-image.jpg' // Add more image URLs here
         ];
-        bg-image {
-        background-size: cover;
-            background-position: center;
-            height: 100vh;
 
         function changeBackground() {
             index = (index + 1) % images.length;
             document.querySelector('section').style.backgroundImage = `url('${images[index]}')`;
         }
 
-        // Change background every 2 seconds
-        setInterval(changeBackground, 2000);
+        // Change background every 5 seconds
+        setInterval(changeBackground, 5000);
     </script>
 
     <!-- Bootstrap CSS -->
@@ -166,9 +161,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //Core Values -->
 
     <!-- Products & Services -->
-    <section class="blog py-5">
-        <div class="container py-md-5" style="margin-top: 20px;"> <!-- Add margin-top to the container -->
-            <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3><br>
+    <section class="blog py-1">
+        <div class="container py-md-1" style="margin-top: 20px;"> <!-- Add margin-top to the container -->
+            <h3 class="heading mb-sm-1 mb-1 text-center">Our Services</h3><br>
             <div class="col-lg-4 col-md-6 blog-center mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
                 <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg"
                     class="img-fluid" alt="" />
