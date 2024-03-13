@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         var index = 0;
         var images = [
             'https://as2.ftcdn.net/v2/jpg/01/17/12/37/1000_F_117123796_MBKR6xeMfrBdfhSWNWtjTddwUci1F2HR.jpg',
-            'https://www.lshtm.ac.uk/sites/default/files/2019-05/skindisease-picture.jpg',
+            'https://png.pngtree.com/thumb_back/fh260/background/20220313/pngtree-real-close-up-of-skin-color-acrylic-fabric-texture-image_1055810.jpg',
             'https://img.freepik.com/premium-photo/abstract-beige-wall-background_87555-20640.jpg' // Add more image URLs here
         ];
 
@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </nav>
 
     <!-- Banner -->
-    <section style="background-image: url('https://s3.ap-southeast-2.amazonaws.com/cdn.basscoastskindoctors.com.au/wp-content/uploads/2021/12/16111303/Skin-specialist-vs-skin-doctor-whats-the-difference-HERO.jpg'); background-position: center;"
+    <section style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20220313/pngtree-real-close-up-of-skin-color-acrylic-fabric-texture-image_1055810.jpg'); background-position: center;"
         class="banner_w3lspvt" id="home">
         <div class="csslider infinity" id="slider1">
 
@@ -119,11 +119,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="overlay">
 							<div class="container">
 								<div class="w3layouts-banner-info text-Center">
-							    <h3 class="text-wh">Skin Disease Diagnosis</h3>
+									// Define the title
+    var title = "Skin Disease Diagnosis";
+
+    // Get the title element
+    var titleElement = document.getElementById("title");
+
+    // Initialize index to 0
+    var index = 0;
+
+    // Function to display each letter one at a time
+    function displayLetter() {
+        // Check if index is less than the length of title
+        if (index < title.length) {
+            // Display the letter at the current index
+            titleElement.textContent += title[index];
+
+            // Increment the index
+            index++;
+        } else {
+            // Stop the timer when entire title is displayed
+            clearInterval(timer);
+        }
+    }
+
+    // Call displayLetter function every 100 milliseconds
+    var timer = setInterval(displayLetter, 100);
+							    <h2 class="text-wh">Skin Disease Diagnosis</h2>
                             <head>
-                                <h4 class="text-wh mx-auto my-4"><b>Acquire information about your skin problem.</b></h4>
+                                <h4 class="text-wh mx-auto my-2"><b>Acquire information about your skin problem.</b></h4>
                                 <br>
-                                <h4 class="text-wh mx-auto my-4"><strong> Below are some queries we will address.</strong></h4>
+                                <h4 class="text-wh mx-auto my-2"><strong> Below are some queries we will address.</strong></h4>
                                 <p style="text-align: justify;" class="text-li mx-auto mt-2">
                                     ✓ Identify your specific skin disorder.<br>
                                     ✓ Examine your symptoms.<br>
