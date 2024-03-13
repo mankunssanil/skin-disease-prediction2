@@ -48,6 +48,20 @@ function print_state(state_id){
 		option_str.options[option_str.length] = new Option(state_arr[i],state_arr[i]);
 	}
 }
+const diagnosisText = document.getElementById('diagnosis').textContent;
+document.getElementById('diagnosis').textContent = '';
+
+let currentIndex = 0;
+function displayLetters() {
+    if (currentIndex < diagnosisText.length) {
+        document.getElementById('diagnosis').textContent += diagnosisText[currentIndex];
+        currentIndex++;
+        setTimeout(displayLetters, 100); // Adjust the delay (in milliseconds) between each letter
+    }
+}
+
+displayLetters();
+
 
 function print_city(city_id, city_index){
 	var option_str = document.getElementById(city_id);
