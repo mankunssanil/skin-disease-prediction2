@@ -123,87 +123,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- Core Values -->
     <div class="container">
     <div class="row">
+        <!-- About Us Section -->
         <div class="col-lg-6">
             <section class="core-value py-5" id="About Us">
-        <div class="container py-md-4">
-            <h3 class="heading mb-sm-5 mb-4 text-left">About Us</h3>
-            <div class="row core-grids justify-content-left">
-                <div class="col-lg-12 core-left">
-                    <h3 class="mt-1" style="color: #000000; font-weight: bold;">ADVANCING DERMATOLOGY,<br> ENRICHING LIVES,<br> IDENTIFYING SKIN DISEASES.<br></h3>
-                    <p class="mt-1">Utilizing machine learning, we offer solutions to predict and address various skin conditions. Our mission is to empower users with accurate predictions about their skin health.</p>
+                <div class="container py-md-4">
+                    <h3 class="heading mb-sm-5 mb-4 text-left">About Us</h3>
+                    <div class="row core-grids justify-content-left">
+                        <div class="col-lg-12 core-left">
+                            <h3 class="mt-1" style="color: #000000; font-weight: bold;">ADVANCING DERMATOLOGY,<br> ENRICHING LIVES,<br> IDENTIFYING SKIN DISEASES.<br></h3>
+                            <p class="mt-1">Utilizing machine learning, we offer solutions to predict and address various skin conditions. Our mission is to empower users with accurate predictions about their skin health.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+        <!-- Our Services Section -->
+        <div class="col-lg-6">
+            <section class="blog py-4" id="Our Services">
+                <div class="container py-md-5" style="margin-top: 40px;">
+                    <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
+                    <div class="draggable-box">
+                        <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
+                        <a href="upload.html">    
+                            <div class="text">
+                                <h4 style="font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
+                                <p>Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
 
-        </div>
-        <div class="col-lg-5">
-	<div class="row match-height">
-           <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draggable Box</title>
-    <style>
-      .draggable-box {
-        border: 2px solid #ccc;
-        width: 300px;
-        padding: 20px;
-        margin: 20px auto;
-        cursor: move;
-      }
-      .draggable-box img {
-        display: block;
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-      }
-    </style>
-    <script>
-      // JavaScript for making the box draggable
-      window.addEventListener('DOMContentLoaded', () => {
-        const box = document.querySelector('.draggable-box');
-        let offsetX, offsetY;
-    
-        box.addEventListener('mousedown', (event) => {
-          offsetX = event.clientX - box.getBoundingClientRect().left;
-          offsetY = event.clientY - box.getBoundingClientRect().top;
-          document.addEventListener('mousemove', onMouseMove);
-          document.addEventListener('mouseup', onMouseUp);
-        });
-    
-        function onMouseMove(event) {
-          const x = event.clientX - offsetX;
-          const y = event.clientY - offsetY;
-          box.style.left = x + 'px';
-          box.style.top = y + 'px';
-        }
-    
-        function onMouseUp() {
-          document.removeEventListener('mousemove', onMouseMove);
-          document.removeEventListener('mouseup', onMouseUp);
-        }
-      });
-    </script>
-</head>
-<body>
-    <div class="col-lg-5">
-        <section class="blog py-4" id="Our Services">
-            <div class="container py-md-5" style="margin-top: 40px;">
-                <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
-                <div class="draggable-box">
-                    <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
-                    <a href="upload.html">    
-                        <div class="text">
-                            <h4 style="font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
-                            <p>Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-</body>
 
     <!-- //Products & Services -->
 
