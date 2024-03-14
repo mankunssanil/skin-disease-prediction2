@@ -33,12 +33,12 @@ body a {
 body img {
     max-width: 100%;
 }
+
 .box-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 2px solid #ccc;
     padding: 20px;
+    display: flex;
+    align-items: center;
     width: 200px; /* Adjust the width as needed */
     height: 200px; /* Adjust the height as needed */
 }
@@ -53,6 +53,7 @@ body img {
 .blog-info {
     flex-grow: 1;
 }
+
 
 a:hover {
     text-decoration: none;
