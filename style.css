@@ -649,6 +649,13 @@ p.about-text {
 .text h3.heading{
 	color: #fff;
 }
+.about-us-heading {
+    color: blue;
+}
+.services-heading {
+    color: blue;
+}
+
 .text h3.heading span {
     color: #e8cd30;
 }
