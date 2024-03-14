@@ -6,6 +6,13 @@ body {
 	font-family: 'Thasadith', sans-serif;
 }
 
+.box-container {
+    border: 2px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
