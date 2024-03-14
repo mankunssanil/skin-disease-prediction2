@@ -53,35 +53,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         rel="stylesheet">
 </head>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Styling</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS to override Bootstrap styles */
+        .navbar {
+            background-color: white; /* Set background color to white */
+        }
+
+        .navbar-nav .nav-link {
+            color: #343a40; /* Set default link color to dark */
+        }
+
+        .navbar-nav .nav-item.active .nav-link {
+            color: #fff; /* Set active link color to white */
+            background-color: #343a40; /* Set active link background color to dark */
+        }
+    </style>
+</head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white static-top" style="background-color: #1C00ff00;">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-white">
     <div class="container">
-      <a class="navbar-brand" href="#home"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#home">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#About Us">About Us
-              <span class="sr-only"></span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Our Services">Our Services
-              <span class="sr-only"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="#home">Your Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#About Us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Our Services">Our Services</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
     <!-- Banner -->
     <section style="background-image: url('https://www.hasnerlaw.com/wp-content/uploads/2021/12/Do-I-Have-to-Get-an-Independent-Medical-Exam.jpg'); background-position: center;"
@@ -176,12 +197,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 </head>
 <body>
+	<div class="col-lg-6">
+            <section class="blog py-5" id="Our Services">
+                <div class="container py-md-6" style="margin-top: 20px;">
+	<h3 class="heading mb-sm-6 mb-5 text-center">Our Services</h3>
     <div class="draggable-box">
       <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
 	 <a href="upload.html">    
       <div class="text">
-        <h4 style="margin-left: 60px;">SKIN DISEASE DETECTION</h4>
-        <p class="mt-4" style="margin-left: 60px;">Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
+        <h4 style="margin-left: 60px; font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
+        <p class="mt-4" style="margin-left: 30px;">Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
       </div>
     </div>
 </body>
