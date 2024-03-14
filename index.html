@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-white">
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container">
         <a class="navbar-brand" href="#home">Your Brand</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,13 +88,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="nav-item active">
                     <a class="nav-link" href="#home">Home
                         <span class="sr-only">(current)</span>
-                    </a>
+                    </a><br>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#About Us">About Us</a>
+                    <a class="nav-link" href="#About Us">About Us</a><br>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#Our Services">Our Services</a>
+                    <a class="nav-link" href="#Our Services">Our Services</a><br>
                 </li>
             </ul>
         </div>
@@ -196,18 +196,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       });
     </script>
 </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Content to Right</title>
+    <style>
+        /* Custom CSS to move content to the right */
+        .draggable-box {
+            display: flex;
+            flex-direction: row-reverse; /* Reverse the order of flex items */
+        }
+
+        .draggable-box img {
+            margin-left: 10px; /* Add margin to the left of the image */
+            margin-right: 60px; /* Adjust margin to position image */
+        }
+
+        .draggable-box .text {
+            flex-grow: 1; /* Allow text to grow and take up available space */
+        }
+
+        .draggable-box h4 {
+            text-align: right; /* Align heading text to the right */
+        }
+
+        .draggable-box p {
+            text-align: right; /* Align paragraph text to the right */
+        }
+    </style>
+</head>
 <body>
-	<div class="col-lg-6">
-            <section class="blog py-5" id="Our Services">
-                <div class="container py-md-6" style="margin-top: 20px;">
-	<h3 class="heading mb-sm-6 mb-5 text-center">Our Services</h3>
-    <div class="draggable-box">
-      <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
-	 <a href="upload.html">    
-      <div class="text">
-        <h4 style="margin-left: 60px; font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
-        <p class="mt-4" style="margin-left: 30px;">Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
-      </div>
+    <div class="col-lg-6">
+        <section class="blog py-5" id="Our Services">
+            <div class="container py-md-6" style="margin-top: 20px;">
+                <h3 class="heading mb-sm-6 mb-5 text-center">Our Services</h3>
+                <div class="draggable-box">
+                    <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
+                    <a href="upload.html">    
+                        <div class="text">
+                            <h4 style="font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
+                            <p>Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
     <!-- //Products & Services -->
