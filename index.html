@@ -38,29 +38,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         }
     </style>
-    <script>
-        addEventListener("load", function() {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-
-        // Function to change background images
-        var index = 0;
-        var images = [
-            'https://www.hasnerlaw.com/wp-content/uploads/2021/12/Do-I-Have-to-Get-an-Independent-Medical-Exam.jpg'
-        ];
-
-        function changeBackground() {
-            index = (index + 1) % images.length;
-            document.querySelector('section').style.backgroundImage = url('${images[index]}');
-        }
-
-        // Change background every 5 seconds
-        setInterval(changeBackground, 5000);
-    </script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -109,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </nav>
 
     <!-- Banner -->
-    <section style="background-image: url('https://www.hasnerlaw.com/wp-content/uploads/2021/12/Do-I-Have-to-Get-an-Independent-Medical-Exam.jpg'); background-position: center; padding-left: 50px; padding-right: 50px;">
+    <section style="background-image: url('https://www.hasnerlaw.com/wp-content/uploads/2021/12/Do-I-Have-to-Get-an-Independent-Medical-Exam.jpg'); background-position: center; background-size: cover; padding-left: 50px; padding-right: 50px;">
         class="banner_w3lspvt" id="home">
         <div class="csslider infinity" id="slider1">
 
