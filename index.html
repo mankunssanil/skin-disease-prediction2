@@ -140,24 +140,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </body>
         <!-- Our Services Section -->
-        <div class="col-lg-6">
-            <section class="blog py-4" id="Our Services">
-                <div class="container py-md-5" style="margin-top: 40px;">
-                    <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
-                    <div class="draggable-box">
-                        <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
-                        <a href="upload.html">    
-                            <div class="text">
-                                <h4 style="font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
-                                <p>Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
-                            </div>
-                        </a>
-                    </div>
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Box</title>
+    <style>
+      /* Custom CSS for adjusting the position */
+      .col-lg-5 {
+        margin-left: auto; /* Move the column to the right */
+      }
+    </style>
+    <style>
+      .draggable-box {
+        border: 2px solid #ccc;
+        width: 300px;
+        padding: 20px;
+        margin: 20px auto;
+        cursor: move;
+      }
+      .draggable-box img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      // JavaScript for making the box draggable
+      window.addEventListener('DOMContentLoaded', () => {
+        const box = document.querySelector('.draggable-box');
+        let offsetX, offsetY;
+    
+        box.addEventListener('mousedown', (event) => {
+          offsetX = event.clientX - box.getBoundingClientRect().left;
+          offsetY = event.clientY - box.getBoundingClientRect().top;
+          document.addEventListener('mousemove', onMouseMove);
+          document.addEventListener('mouseup', onMouseUp);
+        });
+    
+        function onMouseMove(event) {
+          const x = event.clientX - offsetX;
+          const y = event.clientY - offsetY;
+          box.style.left = x + 'px';
+          box.style.top = y + 'px';
+        }
+    
+        function onMouseUp() {
+          document.removeEventListener('mousemove', onMouseMove);
+          document.removeEventListener('mouseup', onMouseUp);
+        }
+      });
+    </script>
+</head>
+<body>
+    <div class="col-lg-5" style="margin-left: 5%;"> <!-- Added inline style for additional margin -->
+        <section class="blog py-4" id="Our Services">
+            <div class="container py-md-5" style="margin-top: 40px;">
+                <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
+                <div class="draggable-box">
+                    <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
+                    <a href="upload.html">    
+                        <div class="text">
+                            <h4 style="font-weight: bold; color: black;">SKIN DISEASE DETECTION</h4>
+                            <p>Anticipate disease type, symptoms and preventive measures for minimizing its impact.</p>
+                        </div>
+                    </a>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
-</div>
+</body>
 
 
     <!-- //Products & Services -->
