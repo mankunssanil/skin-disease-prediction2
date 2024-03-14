@@ -33,6 +33,25 @@ body a {
 body img {
     max-width: 100%;
 }
+.drag-like-table {
+    display: table;
+    width: 100%;
+}
+
+.drag-like-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.drag-like-title {
+    color: #000000;
+    font-weight: bold;
+    margin: 0;
+}
+
+.drag-like-paragraph {
+    margin: 0;
+}
 
 a:hover {
     text-decoration: none;
