@@ -172,15 +172,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draggable Box</title>
     <style>
+      /* Custom CSS for adjusting the position */
+      .col-lg-5 {
+        margin-left: auto; /* Move the column to the right */
+      }
+    </style>
+    <style>
       .draggable-box {
         border: 2px solid #ccc;
         width: 300px;
         padding: 20px;
         margin: 20px auto;
         cursor: move;
-        position: fixed; /* Change position to fixed */
-        top: 20px; /* Adjust top position */
-        right: 20px; /* Adjust right position */
       }
       .draggable-box img {
         display: block;
@@ -217,7 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 </head>
 <body>
-    <div class="col-lg-5">
+    <div class="col-lg-5" style="margin-left: 5%;"> <!-- Added inline style for additional margin -->
         <section class="blog py-4" id="Our Services">
             <div class="container py-md-5" style="margin-top: 40px;">
                 <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
