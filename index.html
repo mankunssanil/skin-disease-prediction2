@@ -104,12 +104,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                
                     <div class="container">
                       <div class="w3layouts-banner-info text-Center">
-                          <h3 class="text-wh" style="margin-top: -100px; color: black;">Skin Disease Diagnosis</h3>
+                          <h3 class="text-wh" style="margin-top: -100px; color: white;">Skin Disease Diagnosis</h3>
                             
-                               <h4 class="text-wh mx-auto my-2" style="margin-right: 0; margin-left: -50px; color: black;"><b>Acquire information about your skin problem.</b></h4>
+                               <h4 class="text-wh mx-auto my-2" style="margin-right: 0; margin-left: -50px; color: white;"><b>Acquire information about your skin problem.</b></h4>
 
                             <br>
-                            <p style="text-align: justify; margin-right: 0; margin-left: -50px; color: black;" class="text-li mx-auto mt-2">
+                            <p style="text-align: justify; margin-right: 0; margin-left: -50px; color: white;" class="text-li mx-auto mt-2">
                                 ✓ Identify your specific skin disorder.<br>
                                 ✓ Examine your symptoms.<br>
                                 ✓ Embrace remedies for your skin.<br>
@@ -143,11 +143,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </section>
         </div>
-        <body>
-    <div class="col-lg-5" style="margin-right: 0%;"> <!-- Adjusted inline style to remove margin-right -->
-        <section class="blog py-4" id="Our Services" style="margin-right: 0%;"> <!-- Adjusted margin-right -->
-            <div class="container py-md-5" style="margin-top: 10px;"> <!-- Adjusted margin-top -->
-                <h3 class="heading mb-sm-5 mb-4 text-center;">Our Services</h3>
+        <div class="col-lg-5">
+	<div class="row match-height">
+           <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Box</title>
+    <style>
+      .draggable-box {
+        border: 2px solid #ccc;
+        width: 300px;
+        padding: 20px;
+        margin: 20px auto;
+        cursor: move;
+      }
+      .draggable-box img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      // JavaScript for making the box draggable
+      window.addEventListener('DOMContentLoaded', () => {
+        const box = document.querySelector('.draggable-box');
+        let offsetX, offsetY;
+    
+        box.addEventListener('mousedown', (event) => {
+          offsetX = event.clientX - box.getBoundingClientRect().left;
+          offsetY = event.clientY - box.getBoundingClientRect().top;
+          document.addEventListener('mousemove', onMouseMove);
+          document.addEventListener('mouseup', onMouseUp);
+        });
+    
+        function onMouseMove(event) {
+          const x = event.clientX - offsetX;
+          const y = event.clientY - offsetY;
+          box.style.left = x + 'px';
+          box.style.top = y + 'px';
+        }
+    
+        function onMouseUp() {
+          document.removeEventListener('mousemove', onMouseMove);
+          document.removeEventListener('mouseup', onMouseUp);
+        }
+      });
+    </script>
+</head>
+<body>
+    <div class="col-lg-5">
+        <section class="blog py-4" id="Our Services">
+            <div class="container py-md-5" style="margin-top: 40px;">
+                <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
                 <div class="draggable-box">
                     <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
                     <a href="upload.html">    
@@ -161,8 +209,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </section>
     </div>
 </body>
-    </div>
-</div>
 
     <!-- //Products & Services -->
 
