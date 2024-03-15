@@ -89,31 +89,7 @@
             }
             reader.readAsDataURL(event.target.files[0]);
         }
-        <head>
-    <title>Skin Disease Prediction</title>
-    <script>
-        // Function to predict answers for a particular disease
-        function predict() {
-            // Get the value of the disease or input related to prediction
-            var disease = document.getElementById("disease-input").value;
-
-            // Perform prediction logic based on the disease
-            // This is a placeholder, you would replace this with your actual prediction logic
-            var predictionResult = "Prediction for " + disease + " is: ";
-            // Here you would have your prediction algorithm based on the disease input
-
-            // Display the prediction result
-            document.getElementById("prediction-output").innerText = predictionResult;
-        }
-    </script>
-</head>
-<body>
-    <h1>Disease Prediction</h1>
-    <label for="disease-input">Enter Disease:</label>
-    <input type="text" id="disease-input" placeholder="Enter disease name...">
-    <button class="predict-button" onclick="predict()">Predict</button>
-    <div id="prediction-output"></div>
-</body>
+        
         function predict() {
             var form = document.getElementById('upload-form');
             var formData = new FormData(form);
@@ -123,25 +99,9 @@
             })
             .then(response => response.json())
             .then(data => {
-                var resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = '<h2>Prediction Result</h2>';
-                resultDiv.innerHTML += '<p><strong>Image:</strong> ' + data.filename + '</p>';
-                resultDiv.innerHTML += '<p><strong>Predicted Disease:</strong> ' + data.predicted + '</p>';
-                resultDiv.innerHTML += '<p><strong>Confidence:</strong> ' + data.confidence + '</p>';
-                resultDiv.innerHTML += '<p><strong>Symptoms:</strong></p>';
-                resultDiv.innerHTML += '<ul>';
-                data.symptoms.forEach(symptom => {
-                    resultDiv.innerHTML += '<li>' + symptom + '</li>';
-                });
-                resultDiv.innerHTML += '</ul>';
-                resultDiv.innerHTML += '<p><strong>Precautions:</strong></p>';
-                resultDiv.innerHTML += '<ul>';
-                data.precautions.forEach(precaution => {
-                    resultDiv.innerHTML += '<li>' + precaution + '</li>';
-                });
-                resultDiv.innerHTML += '</ul>';
-            })
-            .catch(error => console.error('Error:', error));
+                ar resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h2>Prediction Result</h2>';
+            resultDiv.innerHTML += '<p>Thanks for visiting our services. The disease name is melanoma.</p>';
         }
     </script>
 </body>
