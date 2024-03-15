@@ -89,7 +89,31 @@
             }
             reader.readAsDataURL(event.target.files[0]);
         }
+        <head>
+    <title>Skin Disease Prediction</title>
+    <script>
+        // Function to predict answers for a particular disease
+        function predict() {
+            // Get the value of the disease or input related to prediction
+            var disease = document.getElementById("disease-input").value;
 
+            // Perform prediction logic based on the disease
+            // This is a placeholder, you would replace this with your actual prediction logic
+            var predictionResult = "Prediction for " + disease + " is: ";
+            // Here you would have your prediction algorithm based on the disease input
+
+            // Display the prediction result
+            document.getElementById("prediction-output").innerText = predictionResult;
+        }
+    </script>
+</head>
+<body>
+    <h1>Disease Prediction</h1>
+    <label for="disease-input">Enter Disease:</label>
+    <input type="text" id="disease-input" placeholder="Enter disease name...">
+    <button class="predict-button" onclick="predict()">Predict</button>
+    <div id="prediction-output"></div>
+</body>
         function predict() {
             var form = document.getElementById('upload-form');
             var formData = new FormData(form);
