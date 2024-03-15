@@ -154,9 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </body>
 
-        <div class="col-lg-5">
-	<div class="row match-height">
-           <head>
+        <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draggable Box</title>
@@ -165,7 +163,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         border: 2px solid #ccc;
         width: 300px;
         padding: 20px;
-        margin: 20px auto;
+        position: absolute; /* Position the box absolutely */
+        top: 20px; /* Adjust top position */
+        right: 20px; /* Adjust right position */
         cursor: move;
       }
       .draggable-box img {
@@ -203,10 +203,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 </head>
 <body>
-    <div class="col-lg-5" style="margin-right: 0%;"> <!-- Adjusted inline style to move 7 lines right -->
+    <div class="col-lg-5" style="margin-right: 0%;">
         <section class="blog py-4" id="Services" style="margin-right: 0%;">
-    <div class="container py-md-5" style="margin-top: 10px;">
-        <h3 class="heading mb-sm-5 mb-4 text-center" style="color: blue;">Services</h3>
+            <div class="container py-md-5" style="margin-top: 10px;">
                 <div class="draggable-box">
                     <img src="https://magazine.medlineplus.gov/images/uploads/main_images/_main_article_list/is-it-vitiligo.jpg" alt="Placeholder Image">
                     <a href="upload.html">    
