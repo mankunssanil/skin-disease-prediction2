@@ -99,9 +99,25 @@
             })
             .then(response => response.json())
             .then(data => {
-                ar resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Prediction Result</h2>';
-            resultDiv.innerHTML += '<p>Thanks for visiting our services. The disease name is melanoma.</p>';
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<h2>Prediction Result</h2>';
+                resultDiv.innerHTML += '<p><strong>Image:</strong> ' + data.filename + '</p>';
+                resultDiv.innerHTML += '<p><strong>Predicted Disease:</strong> ' + data.predicted + '</p>';
+                resultDiv.innerHTML += '<p><strong>Confidence:</strong> ' + data.confidence + '</p>';
+                resultDiv.innerHTML += '<p><strong>Symptoms:</strong></p>';
+                resultDiv.innerHTML += '<ul>';
+                data.symptoms.forEach(symptom => {
+                    resultDiv.innerHTML += '<li>' + symptom + '</li>';
+                });
+                resultDiv.innerHTML += '</ul>';
+                resultDiv.innerHTML += '<p><strong>Precautions:</strong></p>';
+                resultDiv.innerHTML += '<ul>';
+                data.precautions.forEach(precaution => {
+                    resultDiv.innerHTML += '<li>' + precaution + '</li>';
+                });
+                resultDiv.innerHTML += '</ul>';
+            })
+            .catch(error => console.error('Error:', error));
         }
     </script>
 </body>
