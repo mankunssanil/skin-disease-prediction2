@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask,  render_template, request
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
@@ -19,6 +19,9 @@ classes = {
     5: 'vasc',
     6: 'mel'
 }
+@app.route('/')
+def index():
+    return render_template('nextpage.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -49,7 +52,8 @@ def predict():
         'confidence_score': float(confidence_score)
     }
     
-    return jsonify(response)
+    
+    return render_template('nextpage.html', prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
