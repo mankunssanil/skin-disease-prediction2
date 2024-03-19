@@ -4,8 +4,10 @@ from flask import request
 from flask import render_template
 
 app = Flask(__name__)
-UPLOAD_FOLDER = "Skin-Disease"
+UPLOAD_FOLDER = "skin main project.ipynb"
+DEVICE = "cuda"
 MODEL = None
+
 
 @app.router("/", methods=["GET", "POST"])
 def upload_predict():
