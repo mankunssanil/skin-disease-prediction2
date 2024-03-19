@@ -71,11 +71,13 @@
         <form id="upload-form">
             <label for="file">Choose an image</label>
             <input type="file" id="file" accept="image/*" onchange="previewImage(event)">
+            <span id="Skin-Disease"></span> <!-- This will display the filename -->
         </form>
         <div id="image-preview"></div>
-        <button class="predict-button" onclick="predict()">Predict</button>
-        <div id="result"></div>
+        <button class="predict-button" onclick="redirectToNextPage()">Predict</button>
     </div>
+    <div id="prediction-results"></div>
+    <script src="script.js"></script> 
 
     <script>
         function previewImage(event) {
@@ -88,37 +90,10 @@
                 preview.appendChild(image);
             }
             reader.readAsDataURL(event.target.files[0]);
+            // Display filename
+            document.getElementById('Skin-Disease').innerText = event.target.files[0].name;
         }
         
-        function predict() {
-            var form = document.getElementById('upload-form');
-            var formData = new FormData(form);
-            fetch('/upload', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                var resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = '<h2>Prediction Result</h2>';
-                resultDiv.innerHTML += '<p><strong>Image:</strong> ' + data.filename + '</p>';
-                resultDiv.innerHTML += '<p><strong>Predicted Disease:</strong> ' + data.predicted + '</p>';
-                resultDiv.innerHTML += '<p><strong>Confidence:</strong> ' + data.confidence + '</p>';
-                resultDiv.innerHTML += '<p><strong>Symptoms:</strong></p>';
-                resultDiv.innerHTML += '<ul>';
-                data.symptoms.forEach(symptom => {
-                    resultDiv.innerHTML += '<li>' + symptom + '</li>';
-                });
-                resultDiv.innerHTML += '</ul>';
-                resultDiv.innerHTML += '<p><strong>Precautions:</strong></p>';
-                resultDiv.innerHTML += '<ul>';
-                data.precautions.forEach(precaution => {
-                    resultDiv.innerHTML += '<li>' + precaution + '</li>';
-                });
-                resultDiv.innerHTML += '</ul>';
-            })
-            .catch(error => console.error('Error:', error));
-        }
         function redirectToNextPage() {
             // Redirect to the next page
             window.location.href = 'nextpage.html';
