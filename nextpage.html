@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<h1>Upload new File</h1>
-<form method=post enctype=multipart/form.data>
-  <input type=file name=image>
-  <input type=submit value=Predict>
-  <br>
-  <h3>Prediction: {{prediction}}</h3>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Cancer Prediction</title>
+</head>
+<body>
+    <h1>Skin Cancer Prediction</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <h2>Prediction Results</h2>
+        <ul>
+            <li>Melanocytic nevi: {{ prediction[0] }}</li>
+            <li>Melanoma: {{ prediction[1] }}</li>
+            <li>Benign keratosis-like lesions: {{ prediction[2] }}</li>
+            <li>Basal cell carcinoma: {{ prediction[3] }}</li>
+            <li>Pyogenic granulomas and hemorrhage: {{ prediction[4] }}</li>
+            <li>Actinic keratoses and intraepithelial carcinomae: {{ prediction[5] }}</li>
+            <li>Dermatofibroma: {{ prediction[6] }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
