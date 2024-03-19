@@ -1,28 +1,55 @@
-import os
-from flask import Flask
-from flask import request
-from flask import render_template
+from flask import Flask, request, jsonify
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+import cv2
 
 app = Flask(__name__)
-UPLOAD_FOLDER = "skin main project.ipynb"
-DEVICE = "cuda"
-MODEL = None
 
+# Load the trained model
+model = load_model('skin_cancer.h5')
 
-@app.router("/", methods=["GET", "POST"])
-def upload_predict():
-    if request.method == "POST":
-    image_file = request.files["image"]
-    if imade_file:
-        image_location = os.path.join(
-            UPLOAD_FOLDER,
-            image_file.filename
-        )
-        image_file.save(image_location)
-        return render_template("nextpage.html", prediction=1)
-    return render_template("nextpage.html", prediction=0)
+# Define the classes
+classes = {
+    0: 'akiec',
+    1: 'bcc',
+    2: 'bkl',
+    3: 'df',
+    4: 'nv',
+    5: 'vasc',
+    6: 'mel'
+}
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Get the image file from the request
+    file = request.files['image']
     
+    # Read the image
+    img = cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_COLOR)
+    
+    # Resize the image to match the input shape of the model
+    img_resized = cv2.resize(img, (28, 28))
+    
+    # Preprocess the image (if needed)
+    # Your preprocessing steps here
+    
+    # Make prediction
+    prediction = model.predict(np.expand_dims(img_resized, axis=0))
+    
+    # Get the predicted class
+    predicted_class = classes[np.argmax(prediction)]
+    
+    # Get the confidence score
+    confidence_score = np.max(prediction)
+    
+    # Prepare the response
+    response = {
+        'predicted_class': predicted_class,
+        'confidence_score': float(confidence_score)
+    }
+    
+    return jsonify(response)
 
-if __name__ == "__main__":
-    app.run(port=12000, debug=True)
-
+if __name__ == '__main__':
+    app.run(debug=True)
