@@ -1,31 +1,19 @@
-from flask import Flask, render_template, request, redirect, url_for
-import os
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'Skin-Disease'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
 @app.route('/')
 def index():
-    return render_template('nextpage.html')
+    return render_template('upload.html')
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
-    if request.method == 'POST':
-        if 'file' not in request.files:
-            return redirect(request.url)
-        file = request.files['file']
-        if file.filename == '':
-            return redirect(request.url)
-        if file:
-            filename = file.filename
-            file.save(os.path.join(app.config['Skin-Disease'], filename))
-            # Here you would typically perform your prediction
-            # For demonstration purposes, let's assume prediction results are stored in a list called 'prediction'
-            prediction = [0.2, 0.4, 0.1, 0.3, 0.5, 0.7, 0.6]
-            return render_template('index.html', prediction=prediction, filename=filename)
-    return redirect(url_for('nextpage.html'))  # Redirect to index if GET method is used
+    # Get the uploaded image
+    file = request.files['file']
+    # Perform prediction here
+    # For demonstration purposes, let's assume you get the prediction result as a string
+    prediction_result = "Melanoma"  # Replace this with your actual prediction result
+    return render_template('prediction_result.html', prediction=prediction_result)
 
 if __name__ == '__main__':
     app.run(debug=True)
