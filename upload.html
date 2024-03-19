@@ -68,7 +68,7 @@
 <body>
     <div class="container">
         <h1>Skin Disease Prediction</h1>
-        <form id="upload-form">
+        <form id="upload-form" action="/predict" method="post" enctype="multipart/form-data">
             <label for="file">Choose an image</label>
             <input type="file" id="file" accept="image/*" onchange="previewImage(event)">
             <span id="Skin-Disease"></span> <!-- This will display the filename -->
